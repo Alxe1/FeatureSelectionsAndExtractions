@@ -16,7 +16,7 @@ class Relif(object):
         can only deal with binary classification, and now it cannot handle null
         data, it will be improved later.
 
-        Read nore in :ref:`https://blog.csdn.net/littlely_ll/article/details/71614826`.
+        Read more in :ref:`https://blog.csdn.net/littlely_ll/article/details/71614826`.
 
         :param max_iter: max iterations of relif
 

@@ -13,8 +13,12 @@ class Relif(object):
         """
         This is a simple implementation of relif algorithm which used for feature
         selections, the relif is simple to understand and high performance, but it
-        can only deal with binary classification, and now it cannot handle null
-        data, it will be improved later.
+        can only deal with binary classification.
+
+        Pay attention: relif use random sample selection of same class rather than
+        using nearest neighbor sample to calculate nearest hit and miss, and it use
+        number or string to make difference between named variable and numeric variable.
+        it cannot handle null data, it will be improved later.
 
         Read more in :ref:`https://blog.csdn.net/littlely_ll/article/details/71614826`.
 

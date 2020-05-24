@@ -7,8 +7,10 @@ import random
 
 import numpy as np
 
+from bases import Base
 
-class Relif(object):
+
+class Relif(Base):
     def __init__(self, max_iter, tao):
         """
         This is a simple implementation of relif algorithm which used for feature

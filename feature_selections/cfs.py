@@ -1,8 +1,7 @@
 # -*-coding: utf-8-*-
 
-# Author     : LiuLei 
+# Author     : littlely
 # FileName   : cfs.py
-# DateTime   : 2020/5/25 15:14
 # Description:
 from itertools import combinations
 

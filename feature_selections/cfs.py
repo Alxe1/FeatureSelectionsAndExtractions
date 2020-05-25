@@ -12,6 +12,13 @@ from bases import Base
 
 class CFS(Base):
     def __init__(self):
+        """
+        This is a simple implementation of CFS(correlation-based feature selection) algorithm
+        which used for feature selections, it can only handle numeric variables and numeric labels,
+        it will be improved later.
+
+        read more about CFS, please visit :ref:`https://blog.csdn.net/littlely_ll/article/details/71545929`.
+        """
         self._relavent_cols = []
         self._merits = None
 

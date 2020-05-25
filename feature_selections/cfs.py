@@ -23,6 +23,15 @@ class CFS(Base):
         self._merits = None
 
     def fit(self, X, y):
+        """
+        fit an array data
+
+        :param X: a numpy array
+
+        :param y: the label, a list or one dimension array
+
+        :return:
+        """
         if isinstance(y, list):
             y = np.asarray(y)
         assert isinstance(X, np.ndarray), "X should be an array!"

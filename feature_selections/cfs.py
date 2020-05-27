@@ -32,10 +32,8 @@ class CFS(Base):
 
         :return:
         """
-        if isinstance(y, list):
-            y = np.asarray(y)
-        assert isinstance(X, np.ndarray), "X should be an array!"
-        assert isinstance(y, np.ndarray), "y should be a list or an array!"
+        X = self._check_array(X)
+        y = self._check_array(y)
         assert len(X) == len(y), "X and y should have same length!"
 
         m, n = X.shape

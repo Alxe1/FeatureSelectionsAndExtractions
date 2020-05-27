@@ -42,11 +42,8 @@ class Relif(Base):
 
         :return:
         """
-        assert isinstance(X, np.ndarray), "input should be an array!"
-
-        if isinstance(y, list):
-            y = np.array(y)
-
+        X = self._check_array(X)
+        y = self._check_array(y)
         assert X.shape[0] == len(y), "X and y not in the same length!"
 
         m, n = X.shape

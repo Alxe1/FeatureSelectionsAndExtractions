@@ -3,6 +3,7 @@
 
 - relif
 - relifF
+- mRMR
 - CFS(correlation-based feature selection)
 
 **feature extractions**

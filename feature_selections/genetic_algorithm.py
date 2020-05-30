@@ -78,6 +78,19 @@ class GA(Base):
 
         :return:
         """
+
+        if all(np.array([self.svm_weight, self.feature_weight]) >= 0):
+            if self.svm_weight + self.feature_weight > 1:
+                self.svm_weight = self.svm_weight / (self.svm_weight + self.feature_weight)
+                self.feature_weight = self.feature_weight / (self.svm_weight + self.feature_weight)
+
+            assert self.svm_weight + self.feature_weight == 1.0, "svm_weight + feature_weight should be 1."
+        else:
+            raise ValueError("svm_weight and feature_weight argument can not be negative!")
+
+        X = self._check_array(X)
+        y = self._check_array(y)
+
         fitness_array = np.array([])
 
         population = self.generate_population(size=self.size, feature_num=self.feature_num, c_num=self.c_num,
@@ -107,6 +120,7 @@ class GA(Base):
         self.best_feature_index = sorted(sorted_feature_sum[-self.topF:])
 
     def transform(self, X):
+        X = self._check_array(X)
         return X[:, self.best_feature_index]
 
     def fit_transform(self, X, y):
@@ -116,19 +130,12 @@ class GA(Base):
     @property
     def important_features(self):
         return self.best_feature_index
-    
+
     def average_fitness(self):
         return self.average_fitness
 
     def fitness(self, gene, svm_acc, svm_weight, feature_weight, C):
         """ calculate the fitness of individuals """
-
-        if any(np.array([svm_weight, feature_weight]) >= 0):
-            if svm_weight + feature_weight > 1:
-                svm_weight = svm_weight / (svm_weight + feature_weight)
-                feature_weight = feature_weight / (svm_weight + feature_weight)
-        else:
-            raise ValueError("svm_weight and feature_weight argument can not be negative!")
 
         _fitness = svm_weight * svm_acc + feature_weight / float(sum(C * gene[0:self.feature_num]))
         return _fitness

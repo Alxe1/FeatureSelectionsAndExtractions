@@ -5,6 +5,7 @@
 - relifF
 - mRMR
 - CFS(correlation-based feature selection)
+- Generic Algorithm
 
 **feature extractions**
 

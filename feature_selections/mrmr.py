@@ -2,6 +2,7 @@
 # file       : mrmr.py
 # author     : littlely
 # description:
+import warnings
 
 import numpy as np
 
@@ -36,7 +37,7 @@ class MRMR(Base):
 
         if self.feature_num > X.shape[1]:
             self.feature_num = X.shape[1]
-            print("The feature_num has to be set less or equal to {}".format(X.shape[1]))
+            warnings.warn("The feature_num has to be set less or equal to {}".format(X.shape[1]), UserWarning)
 
         MIs = self.feature_label_MIs(X, y)
         max_MI_arg = np.argmax(MIs)

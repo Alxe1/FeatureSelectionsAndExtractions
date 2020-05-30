@@ -106,14 +106,19 @@ class GA(Base):
         sorted_feature_sum = np.argsort(feature_sum)
         self.best_feature_index = sorted(sorted_feature_sum[-self.topF:])
 
-        print(self.best_feature_index)
-
     def transform(self, X):
         return X[:, self.best_feature_index]
 
     def fit_transform(self, X, y):
         self.fit(X, y)
         return self.transform(X)
+
+    @property
+    def important_features(self):
+        return self.best_feature_index
+    
+    def average_fitness(self):
+        return self.average_fitness
 
     def fitness(self, gene, svm_acc, svm_weight, feature_weight, C):
         """ calculate the fitness of individuals """

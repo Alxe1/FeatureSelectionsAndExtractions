@@ -19,6 +19,6 @@ class Base(object):
 
     def _check_array(self, data):
         if isinstance(data, list):
-            data = np.asarray(data)
+            data = np.asarray(data, dtype="O")
         assert isinstance(data, np.ndarray), "input should be an array!"
         return data

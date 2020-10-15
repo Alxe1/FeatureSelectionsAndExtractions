@@ -7,7 +7,7 @@ from itertools import combinations
 
 import numpy as np
 
-from bases import Base
+from bases.base import Base
 
 
 class CFS(Base):

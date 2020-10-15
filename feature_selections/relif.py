@@ -7,7 +7,7 @@ import random
 
 import numpy as np
 
-from bases import Base
+from bases.base import Base
 
 
 class Relif(Base):

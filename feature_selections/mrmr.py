@@ -6,7 +6,7 @@ import warnings
 
 import numpy as np
 
-from bases import Base
+from bases.base import Base
 
 
 class MRMR(Base):

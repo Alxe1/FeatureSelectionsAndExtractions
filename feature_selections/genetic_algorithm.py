@@ -11,7 +11,7 @@ import numpy as np
 from sklearn.svm import SVC
 from sklearn.model_selection import cross_validate
 
-from bases import Base
+from bases.base import Base
 
 
 class GA(Base):

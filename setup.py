@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="fsae",
-    version="1.0",
+    version="1.0.0",
     description="feature selections and feature extractions",
     author="Littlely",
     packages=find_packages(),

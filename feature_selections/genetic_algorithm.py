@@ -133,6 +133,7 @@ class GA(Base):
     def important_features(self):
         return self.best_feature_index
 
+    @property
     def average_fitness(self):
         return self.average_fitness
 

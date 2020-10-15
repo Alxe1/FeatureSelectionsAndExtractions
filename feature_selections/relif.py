@@ -86,6 +86,8 @@ class Relif(Base):
             if w >= self.tao:
                 self.chosen_features.update({i: w})
 
+        return self
+
     def transform(self, X):
         """
         transform the array data

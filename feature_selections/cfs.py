@@ -77,6 +77,8 @@ class CFS(Base):
             else:
                 break
 
+        return self
+
     def transform(self, X):
         return X[:, self._relavent_cols]
 

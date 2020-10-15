@@ -108,6 +108,8 @@ class RelifF(Base):
             if w >= self.tao:
                 self._important_weight[i] = w
 
+        return self
+
     def transform(self, X):
         """
         transform the array data

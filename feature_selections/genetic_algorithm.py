@@ -119,6 +119,8 @@ class GA(Base):
         sorted_feature_sum = np.argsort(feature_sum)
         self.best_feature_index = sorted(sorted_feature_sum[-self.topF:])
 
+        return self
+
     def transform(self, X):
         X = self._check_array(X)
         return X[:, self.best_feature_index]

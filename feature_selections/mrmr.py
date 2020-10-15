@@ -68,6 +68,8 @@ class MRMR(Base):
 
         self._selected_features = [ind for ind, mi in selected_features]
 
+        return self
+
     def transform(self, X):
         return X[:, self._selected_features]
 

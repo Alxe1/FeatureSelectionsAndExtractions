@@ -12,7 +12,7 @@ setup(
     author="Littlely",
     packages=find_packages(),
     install_requires=[
-        "numpy==1.18.0",
+        "numpy==1.22.0",
         "scikit-learn==0.20.2"
     ]
 )
